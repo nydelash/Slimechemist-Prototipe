@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c674cxktnvmka"]
+
+[ext_resource type="Script" uid="uid://ce16p66xmlo64" path="res://scripts/slimes/slime_tower_basic.gd" id="1_dp077"]
+[ext_resource type="Texture2D" uid="uid://dt2ysmm6ku2l0" path="res://assets/sprites/SlimeVerde.png" id="2_45ku6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp077"]
+radius = 16.0
+
+[node name="SlimeTower" type="Node2D" unique_id=1143564576]
+script = ExtResource("1_dp077")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=533376398]
+texture = ExtResource("2_45ku6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=329211957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1951308610]
+position = Vector2(nan, nan)
+scale = Vector2(inf, nan)
+shape = SubResource("CircleShape2D_dp077")
