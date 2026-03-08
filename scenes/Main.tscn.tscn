@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dek5hfkep04d4"]
 
 [ext_resource type="TileSet" uid="uid://qx4ohs7lkk33" path="res://GroundLayer.tres" id="1_su47t"]
+[ext_resource type="Script" uid="uid://b18pdk6ej8pud" path="res://managers/grid_manager.gd" id="2_xh2ch"]
 
 [node name="Game" type="Node" unique_id=1109963297]
 
@@ -35,5 +36,8 @@ tile_set = ExtResource("1_su47t")
 [node name="Projectiles" type="Node2D" parent="." unique_id=1178258932]
 
 [node name="Managers" type="Node" parent="." unique_id=221575062]
+
+[node name="GridManager" type="Node" parent="Managers" unique_id=789678322]
+script = ExtResource("2_xh2ch")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=846325090]

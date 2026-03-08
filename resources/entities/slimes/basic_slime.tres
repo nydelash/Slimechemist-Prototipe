@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EntityData" format=3 uid="uid://dfeqehrdiq38a"]
+
+[ext_resource type="Resource" uid="uid://by1s2us3687v2" path="res://resources/attacks/basic_projectile_attack.tres" id="1_8rqt1"]
+[ext_resource type="Script" uid="uid://cqvaq1mffqtrj" path="res://resources/entities/entity_data.gd" id="1_tbppu"]
+
+[resource]
+script = ExtResource("1_tbppu")
+entity_name = "Basic Slime"
+attack_data = ExtResource("1_8rqt1")
+metadata/_custom_type_script = "uid://cqvaq1mffqtrj"

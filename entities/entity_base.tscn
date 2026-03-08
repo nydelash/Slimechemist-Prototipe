@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c2cn58wa5oq50"]
+
+[ext_resource type="Script" uid="uid://ci8r1uuhildkh" path="res://entities/entity_base.gd" id="1_1i81c"]
+
+[node name="Entity" type="CharacterBody2D" unique_id=1150683471]
+script = ExtResource("1_1i81c")
+
+[node name="Visual" type="Node2D" parent="." unique_id=2100315452]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=703975650]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1394374684]
+
+[node name="Components" type="Node" parent="." unique_id=714894368]
+
+[node name="Detection" type="Area2D" parent="." unique_id=1542033325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=873334295]
