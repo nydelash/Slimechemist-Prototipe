@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://brmd7v7uorfr7" path="res://resources/traits/trait_data.gd" id="1_ltwds"]
 
+[sub_resource type="PackedScene" id="PackedScene_ltwds"]
+
 [resource]
 script = ExtResource("1_ltwds")
 trait_name = "Collector"
 description = "Recolecta esencia cercana automáticamente"
+special_component = SubResource("PackedScene_ltwds")
 metadata/_custom_type_script = "uid://brmd7v7uorfr7"
