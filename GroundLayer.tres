@@ -1,0 +1,23 @@
+[gd_resource type="TileSet" format=3 uid="uid://qx4ohs7lkk33"]
+
+[ext_resource type="Texture2D" uid="uid://dibvk6jbvw557" path="res://assets/sprites/tile size.png" id="1_7luyb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xh2ch"]
+texture = ExtResource("1_7luyb")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "buildable"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "obstacle"
+custom_data_layer_2/type = 1
+custom_data_layer_3/name = "path"
+custom_data_layer_3/type = 1
+sources/1 = SubResource("TileSetAtlasSource_xh2ch")
