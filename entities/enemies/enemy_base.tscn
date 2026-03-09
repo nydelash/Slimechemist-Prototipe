@@ -2,19 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://c2cn58wa5oq50" path="res://entities/entity_base.tscn" id="1_6kwvc"]
 [ext_resource type="Texture2D" uid="uid://5ubehmunpcwd" path="res://assets/sprites/Tiles/tree_pineLarge_W.png" id="2_3iigx"]
+[ext_resource type="Script" uid="uid://0ybli3go6wbi" path="res://entities/enemies/enemy_base.gd" id="2_prjjb"]
+[ext_resource type="Resource" uid="uid://xgixidcydu27" path="res://resources/enemies/enemy_basic.tres" id="3_w28g0"]
+[ext_resource type="Script" uid="uid://bo63cngnu86rn" path="res://components/stats/stats_component.gd" id="4_yc03e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3iigx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_prjjb"]
 
 [node name="Enemy" unique_id=1150683471 instance=ExtResource("1_6kwvc")]
+collision_mask = 2
+script = ExtResource("2_prjjb")
+entity_data = ExtResource("3_w28g0")
 
 [node name="Sprite2D" parent="Visual" parent_id_path=PackedInt32Array(2100315452) index="0" unique_id=703975650]
-scale = Vector2(0.48828125, 0.5568182)
+scale = Vector2(0.109375, 0.14340588)
 texture = ExtResource("2_3iigx")
 
 [node name="Collision" parent="." index="1" unique_id=1394374684]
 shape = SubResource("CircleShape2D_3iigx")
+
+[node name="StatsComponent" type="Node" parent="Components" parent_id_path=PackedInt32Array(714894368) index="0" unique_id=1974913390]
+script = ExtResource("4_yc03e")
 
 [node name="CollisionShape2D" parent="Detection" parent_id_path=PackedInt32Array(1542033325) index="0" unique_id=873334295]
 shape = SubResource("CircleShape2D_prjjb")

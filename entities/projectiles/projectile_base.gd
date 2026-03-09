@@ -1,25 +1,21 @@
 class_name Projectile
 extends Area2D
 
+var target : Node2D
+var damage : float
 
-var speed : float = 300
-
-var target : Node
-
-var damage : float = 1
-
-var pierce : int = 0
-
-var bounce : int = 0
+var speed : float = 400.0
 
 
-func set_target(t):
-	target = t
+func setup(new_target: Node2D, new_damage: float):
+
+	target = new_target
+	damage = new_damage
 
 
 func _physics_process(delta):
 
-	if not target or not is_instance_valid(target):
+	if target == null or not is_instance_valid(target):
 		queue_free()
 		return
 
@@ -28,16 +24,15 @@ func _physics_process(delta):
 	global_position += direction * speed * delta
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D):
+
+	print("HIT:", body.name)
 
 	if body.is_in_group("enemies"):
 
-		var stats = body.get_component("StatsComponent")
+		var stats = body.get_node_or_null("Components/StatsComponent")
 
-		if stats:
+		if stats != null:
 			stats.take_damage(damage)
 
-		if pierce > 0:
-			pierce -= 1
-		else:
-			queue_free()
+		queue_free()

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cja4ieesjs15r" path="res://managers/loot_manager.gd" id="3_0bbpv"]
 [ext_resource type="Script" uid="uid://cni6rigj481li" path="res://managers/wave_manager.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://cjlrcwhvt7e2k" path="res://managers/enemy_spawner.gd" id="5_c01mt"]
+[ext_resource type="PackedScene" uid="uid://br87uujx455vo" path="res://entities/loot/essence_drop.tscn" id="5_lhr70"]
 [ext_resource type="Script" uid="uid://c71mg2mgxu6td" path="res://managers/input_manager.gd" id="5_q8u5g"]
 [ext_resource type="PackedScene" uid="uid://xeu8e4qnywti" path="res://entities/enemies/enemy_base.tscn" id="6_c01mt"]
 [ext_resource type="Script" uid="uid://dq5cnnmjpimt7" path="res://managers/build_manager.gd" id="7_nxtc6"]
@@ -16,12 +17,12 @@
 
 [node name="Map" type="Node2D" parent="World" unique_id=931673642]
 
-[node name="GroundLayer" type="TileMapLayer" parent="World/Map" unique_id=119940292]
-tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAEAAQAAAAEAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAUAAQAAAAAAAAAQAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAANAAMAAQAAAAAAAAANAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAQAAMAAQAAAAAAAAARAAMAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAEAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAAAAAASAAIAAQAAAAAAAAARAAQAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAA=")
+[node name="PathLayer" type="TileMapLayer" parent="World/Map" unique_id=1921528760]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAARAAMAAQAAAAAAAAASAAMAAQAAAAAAAAATAAMAAQAAAAAAAAAUAAMAAQAAAAAAAAAVAAMAAQAAAAAAAAAWAAMAAQAAAAAAAAAXAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAZAAMAAQAAAAAAAAAaAAMAAQAAAAAAAAAbAAMAAQAAAAAAAAAcAAMAAQAAAAAAAAAdAAMAAQAAAAAAAAA=")
 tile_set = ExtResource("1_su47t")
 
-[node name="PathLayer" type="TileMapLayer" parent="World/Map" unique_id=1921528760]
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAEAAAA=")
+[node name="GroundLayer" type="TileMapLayer" parent="World/Map" unique_id=119940292]
+tile_map_data = PackedByteArray("AAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQAAAAAAAAARAAQAAQAAAAAAAAASAAQAAQAAAAAAAAATAAQAAQAAAAAAAAAUAAQAAQAAAAAAAAAVAAQAAQAAAAAAAAAWAAQAAQAAAAAAAAAXAAQAAQAAAAAAAAAYAAQAAQAAAAAAAAAZAAQAAQAAAAAAAAAaAAQAAQAAAAAAAAAbAAQAAQAAAAAAAAAcAAQAAQAAAAAAAAAdAAQAAQAAAAAAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="ObstacleLayer" type="TileMapLayer" parent="World/Map" unique_id=1159958203]
@@ -29,6 +30,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAEAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="Spawners" type="Node2D" parent="World" unique_id=261739806]
+position = Vector2(145, 104)
 
 [node name="Spawn_1" type="Marker2D" parent="World/Spawners" unique_id=641219229]
 script = ExtResource("5_c01mt")
@@ -38,6 +40,7 @@ script = ExtResource("5_c01mt")
 [node name="Spawn_3" type="Marker2D" parent="World/Spawners" unique_id=1039246190]
 
 [node name="LaboratoryTarget" type="Marker2D" parent="World" unique_id=1591612489]
+position = Vector2(432, 263)
 
 [node name="Entities" type="Node2D" parent="." unique_id=399610015]
 
@@ -50,6 +53,7 @@ script = ExtResource("2_xh2ch")
 
 [node name="LootManager" type="Node" parent="Managers" unique_id=212876140]
 script = ExtResource("3_0bbpv")
+essence_scene = ExtResource("5_lhr70")
 
 [node name="InputManager" type="Node" parent="Managers" unique_id=1800238239]
 script = ExtResource("5_q8u5g")

@@ -4,14 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dp7kxb3fuuaxl" path="res://assets/sprites/Tiles/fence_wood_E.png" id="2_a6h5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6h5p"]
+radius = 12.0
 
 [node name="Projectile" type="Area2D" unique_id=2143148215]
+collision_layer = 2
 script = ExtResource("1_heyrr")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=199873910]
 shape = SubResource("CircleShape2D_a6h5p")
 
 [node name="Visual" type="Sprite2D" parent="." unique_id=740996110]
+position = Vector2(-1, -14)
+scale = Vector2(0.1484375, 0.1484375)
 texture = ExtResource("2_a6h5p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

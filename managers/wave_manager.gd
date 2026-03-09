@@ -49,7 +49,9 @@ func spawn_enemy():
 
 	var spawner = get_tree().current_scene.get_node("Managers/EnemySpawner")
 
-	var spawn_point = get_tree().current_scene.get_node("World/Spawners").get_children().pick_random()
+	var spawn_points = get_tree().current_scene.get_node("World/Spawners").get_children()
+
+	var spawn_point = spawn_points.pick_random()
 
 	spawner.spawn_enemy(spawn_point.global_position)
 

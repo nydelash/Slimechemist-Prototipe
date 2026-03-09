@@ -1,21 +1,25 @@
 class_name Enemy
 extends Entity
 
-var speed : float = 50
+@export var entity_data : EntityData
 
-var target_position : Vector2
+var speed : float = 60.0
+var target : Node2D
 
 
 func _ready():
 
 	add_to_group("enemies")
 
-	target_position = get_tree().current_scene.get_node("World/LaboratoryTarget").global_position
+	target = get_tree().current_scene.get_node("World/LaboratoryTarget")
 
 
 func _physics_process(delta):
 
-	var direction = (target_position - global_position).normalized()
+	if target == null:
+		return
+
+	var direction = (target.global_position - global_position).normalized()
 
 	velocity = direction * speed
 

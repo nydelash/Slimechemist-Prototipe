@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EntityData" format=3 uid="uid://xgixidcydu27"]
+
+[ext_resource type="Script" uid="uid://cqvaq1mffqtrj" path="res://resources/entities/entity_data.gd" id="1_jav31"]
+
+[resource]
+script = ExtResource("1_jav31")
+attack_range = 1.0
+metadata/_custom_type_script = "uid://cqvaq1mffqtrj"

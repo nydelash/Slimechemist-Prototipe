@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AttackData" format=3 uid="uid://by1s2us3687v2"]
+
+[ext_resource type="PackedScene" uid="uid://7d74ag55plwk" path="res://entities/projectiles/projectile_base.tscn" id="1_5ni5h"]
+[ext_resource type="Script" uid="uid://c3td6k1jdo0xx" path="res://resources/attacks/attack_data.gd" id="2_qb2xc"]
+
+[resource]
+script = ExtResource("2_qb2xc")
+projectile_scene = ExtResource("1_5ni5h")
+metadata/_custom_type_script = "uid://c3td6k1jdo0xx"
