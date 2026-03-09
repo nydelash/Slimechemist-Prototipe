@@ -1,11 +1,14 @@
-[gd_scene format=3 uid="uid://dek5hfkep04d4"]
+[gd_scene format=4 uid="uid://dek5hfkep04d4"]
 
 [ext_resource type="TileSet" uid="uid://qx4ohs7lkk33" path="res://GroundLayer.tres" id="1_su47t"]
 [ext_resource type="Script" uid="uid://b18pdk6ej8pud" path="res://managers/grid_manager.gd" id="2_xh2ch"]
 [ext_resource type="Script" uid="uid://cja4ieesjs15r" path="res://managers/loot_manager.gd" id="3_0bbpv"]
 [ext_resource type="Script" uid="uid://cni6rigj481li" path="res://managers/wave_manager.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://cjlrcwhvt7e2k" path="res://managers/enemy_spawner.gd" id="5_c01mt"]
+[ext_resource type="Script" uid="uid://c71mg2mgxu6td" path="res://managers/input_manager.gd" id="5_q8u5g"]
 [ext_resource type="PackedScene" uid="uid://xeu8e4qnywti" path="res://entities/enemies/enemy_base.tscn" id="6_c01mt"]
+[ext_resource type="Script" uid="uid://dq5cnnmjpimt7" path="res://managers/build_manager.gd" id="7_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://cwcix3uin6606" path="res://entities/slimes/slime_base.tscn" id="8_jlsqs"]
 
 [node name="Game" type="Node" unique_id=1109963297]
 
@@ -14,20 +17,21 @@
 [node name="Map" type="Node2D" parent="World" unique_id=931673642]
 
 [node name="GroundLayer" type="TileMapLayer" parent="World/Map" unique_id=119940292]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAAEAAQAAAAEAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAUAAQAAAAAAAAAQAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAANAAMAAQAAAAAAAAANAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAQAAMAAQAAAAAAAAARAAMAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAEAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAAAAAASAAIAAQAAAAAAAAARAAQAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="PathLayer" type="TileMapLayer" parent="World/Map" unique_id=1921528760]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAEAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="ObstacleLayer" type="TileMapLayer" parent="World/Map" unique_id=1159958203]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAEAAAAAAAEAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="Spawners" type="Node2D" parent="World" unique_id=261739806]
 
 [node name="Spawn_1" type="Marker2D" parent="World/Spawners" unique_id=641219229]
+script = ExtResource("5_c01mt")
 
 [node name="Spawn_2" type="Marker2D" parent="World/Spawners" unique_id=1314705006]
 
@@ -48,6 +52,7 @@ script = ExtResource("2_xh2ch")
 script = ExtResource("3_0bbpv")
 
 [node name="InputManager" type="Node" parent="Managers" unique_id=1800238239]
+script = ExtResource("5_q8u5g")
 
 [node name="WaveManager" type="Node" parent="Managers" unique_id=123082379]
 script = ExtResource("4_vcsgt")
@@ -55,5 +60,9 @@ script = ExtResource("4_vcsgt")
 [node name="EnemySpawner" type="Node" parent="Managers" unique_id=721507259]
 script = ExtResource("5_c01mt")
 enemy_scene = ExtResource("6_c01mt")
+
+[node name="BuildManager" type="Node" parent="Managers" unique_id=307108785]
+script = ExtResource("7_nxtc6")
+slime_scene = ExtResource("8_jlsqs")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=846325090]

@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ci8r1uuhildkh" path="res://entities/entity_base.gd" id="1_1i81c"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1i81c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_88w7c"]
+
 [node name="Entity" type="CharacterBody2D" unique_id=1150683471]
 script = ExtResource("1_1i81c")
 
@@ -10,9 +14,11 @@ script = ExtResource("1_1i81c")
 [node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=703975650]
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1394374684]
+shape = SubResource("CircleShape2D_1i81c")
 
 [node name="Components" type="Node" parent="." unique_id=714894368]
 
 [node name="Detection" type="Area2D" parent="." unique_id=1542033325]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=873334295]
+shape = SubResource("CircleShape2D_88w7c")

@@ -11,6 +11,8 @@ func spawn_enemy(position: Vector2):
 	get_tree().current_scene.get_node("Entities").add_child(enemy)
 
 	enemy.global_position = position
+	
+	print("enemigo spawneado correctamente mamabicho!")
 
 func _ready():
 
