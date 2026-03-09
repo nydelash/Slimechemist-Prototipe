@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://xeu8e4qnywti"]
+
+[ext_resource type="PackedScene" uid="uid://c2cn58wa5oq50" path="res://entities/entity_base.tscn" id="1_6kwvc"]
+
+[node name="Enemy" unique_id=1150683471 instance=ExtResource("1_6kwvc")]

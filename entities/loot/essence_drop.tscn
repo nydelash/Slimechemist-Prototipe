@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://br87uujx455vo"]
+
+[node name="EssenceDrop" type="Area2D" unique_id=162903755]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1240771325]
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1720676355]
