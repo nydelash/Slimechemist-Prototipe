@@ -2,24 +2,83 @@
 
 [ext_resource type="PackedScene" uid="uid://c2cn58wa5oq50" path="res://entities/entity_base.tscn" id="1_puka5"]
 [ext_resource type="Script" uid="uid://fumdp33p0t44" path="res://entities/slimes/slime_base.gd" id="2_1l6nb"]
-[ext_resource type="Texture2D" uid="uid://blg2me1auwdj6" path="res://assets/sprites/Tiles/castle_towerGreenBase_S.png" id="3_gq7vg"]
 [ext_resource type="Resource" uid="uid://dfeqehrdiq38a" path="res://resources/entities/slimes/basic_slime.tres" id="3_jrix8"]
+[ext_resource type="Texture2D" uid="uid://bpgxqxrlb4tqb" path="res://assets/sprites/SlimeBaseIdle.png" id="4_7sas3"]
 [ext_resource type="Script" uid="uid://bo63cngnu86rn" path="res://components/stats/stats_component.gd" id="4_nwjs3"]
 [ext_resource type="Script" uid="uid://bgpqdjxhhf7mx" path="res://components/combat/attack_component.gd" id="5_x13h1"]
 [ext_resource type="Script" uid="uid://cw3f1m3dew760" path="res://components/traits/trait_component.gd" id="6_jrix8"]
 [ext_resource type="Resource" uid="uid://by1s2us3687v2" path="res://resources/attacks/attack_basic_projectile.tres" id="7_7sas3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyo7a"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8h03"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adwy7"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oioat"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ykj"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ux1k"]
+atlas = ExtResource("4_7sas3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b5lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyo7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8h03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oioat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ykj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ux1k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrix8"]
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sas3"]
+radius = 9.0
 
 [node name="Slime" unique_id=1150683471 instance=ExtResource("1_puka5")]
 script = ExtResource("2_1l6nb")
 entity_data = ExtResource("3_jrix8")
 
 [node name="Sprite2D" parent="Visual" parent_id_path=PackedInt32Array(2100315452) index="0" unique_id=703975650]
+position = Vector2(0, -6)
 scale = Vector2(0.1015625, 0.1015625)
-texture = ExtResource("3_gq7vg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" parent_id_path=PackedInt32Array(2100315452) index="1" unique_id=444366480]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5b5lr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.4744753
 
 [node name="Collision" parent="." index="1" unique_id=1394374684]
 shape = SubResource("CircleShape2D_jrix8")

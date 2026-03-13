@@ -36,10 +36,14 @@ func die():
 	var entity = get_parent().get_parent()
 
 	if entity.is_in_group("enemies"):
+
 		drop_loot()
 
 		var wave_manager = get_tree().current_scene.get_node("Managers/WaveManager")
 		wave_manager.enemy_died()
+
+		var enemy_manager = get_tree().current_scene.get_node("Managers/EnemyManager")
+		enemy_manager.unregister_enemy(entity)
 
 	entity.queue_free()
 

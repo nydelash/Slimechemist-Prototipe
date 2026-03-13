@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://xeu8e4qnywti" path="res://entities/enemies/enemy_base.tscn" id="6_c01mt"]
 [ext_resource type="Script" uid="uid://dq5cnnmjpimt7" path="res://managers/build_manager.gd" id="7_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://cwcix3uin6606" path="res://entities/slimes/slime_base.tscn" id="8_jlsqs"]
+[ext_resource type="Script" uid="uid://d070adctsfldh" path="res://managers/enemy_manager.gd" id="11_wp0k4"]
+[ext_resource type="Script" uid="uid://b08cdq147hm4v" path="res://managers/game_manager.gd" id="12_bjd11"]
 
 [node name="Game" type="Node" unique_id=1109963297]
 
@@ -22,7 +24,6 @@ tile_map_data = PackedByteArray("AAALAAMAAAABAAEAAAAMAAMAAAABAAEAAAANAAMAAAABAAE
 tile_set = ExtResource("1_su47t")
 
 [node name="GroundLayer" type="TileMapLayer" parent="World/Map" unique_id=119940292]
-tile_map_data = PackedByteArray("AAAOAPz/AAAAAAAAAAA=")
 tile_set = ExtResource("1_su47t")
 
 [node name="ObstacleLayer" type="TileMapLayer" parent="World/Map" unique_id=1159958203]
@@ -69,4 +70,32 @@ enemy_scene = ExtResource("6_c01mt")
 script = ExtResource("7_nxtc6")
 slime_scene = ExtResource("8_jlsqs")
 
+[node name="EnemyManager" type="Node" parent="Managers" unique_id=1193159260]
+script = ExtResource("11_wp0k4")
+
+[node name="GameManager" type="Node" parent="Managers" unique_id=537014501]
+script = ExtResource("12_bjd11")
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=846325090]
+
+[node name="EssenceCounter" type="Label" parent="UI" unique_id=566972430]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Essence: 0"
+
+[node name="SlimeCounter" type="Label" parent="UI" unique_id=833928930]
+offset_left = 134.0
+offset_top = 1.0
+offset_right = 194.0
+offset_bottom = 24.0
+text = "Slime: 1"
+
+[node name="BuySlimeButton" type="Button" parent="UI" unique_id=1885320128]
+offset_left = 24.0
+offset_top = 648.0
+offset_right = 117.0
+offset_bottom = 702.0
+text = "Buy Slime
+(5 Essence)"
+
+[connection signal="pressed" from="UI/BuySlimeButton" to="World/Spawners/Spawn_1" method="_on_buy_slime_button_pressed"]

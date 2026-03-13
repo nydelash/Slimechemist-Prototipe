@@ -39,7 +39,8 @@ func find_target():
 
 	var owner = get_parent().get_parent()
 
-	var enemies = get_tree().get_nodes_in_group("enemies")
+	var manager = get_tree().current_scene.get_node("Managers/EnemyManager")
+	var enemies = manager.get_enemies()
 
 	var closest = null
 	var closest_distance = INF

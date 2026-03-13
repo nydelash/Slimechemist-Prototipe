@@ -6,13 +6,14 @@ extends Entity
 var speed : float = 60.0
 var target : Node2D
 
-
 func _ready():
 
 	add_to_group("enemies")
 
 	target = get_tree().current_scene.get_node("World/LaboratoryTarget")
 
+	var enemy_manager = get_tree().current_scene.get_node("Managers/EnemyManager")
+	enemy_manager.register_enemy(self)
 
 func _physics_process(delta):
 

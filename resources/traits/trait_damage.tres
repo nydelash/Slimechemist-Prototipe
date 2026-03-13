@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TraitData" format=3 uid="uid://dw3u4yy5itbty"]
+
+[ext_resource type="Script" uid="uid://brmd7v7uorfr7" path="res://resources/traits/trait_data.gd" id="1_cxlpe"]
+
+[resource]
+script = ExtResource("1_cxlpe")
+trait_name = "Damage"
+description = "Increase damage by 1"
+damage_modifier = 5.0
+metadata/_custom_type_script = "uid://brmd7v7uorfr7"

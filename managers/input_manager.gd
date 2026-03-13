@@ -12,7 +12,12 @@ func _input(event):
 
 
 
-func handle_left_click(mouse_position: Vector2):
+func handle_left_click(mouse_position):
+
+	var space = get_viewport().gui_get_hovered_control()
+
+	if space != null:
+		return
 
 	var build_manager = get_tree().current_scene.get_node("Managers/BuildManager")
 

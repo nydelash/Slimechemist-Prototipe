@@ -7,7 +7,7 @@ var stats_component
 
 
 func _ready():
-	stats_component = get_parent().get_parent().get_component("StatsComponent")
+	stats_component = get_parent().get_node_or_null("StatsComponent")
 
 
 func add_trait(trait_data : TraitData):

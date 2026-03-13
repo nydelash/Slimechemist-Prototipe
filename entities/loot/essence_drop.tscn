@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://br87uujx455vo"]
 
+[ext_resource type="Script" uid="uid://dlyaeqsucd2wi" path="res://entities/loot/essence_drop.gd" id="1_1m3fq"]
+[ext_resource type="Texture2D" uid="uid://c0ggekgkqyexu" path="res://assets/sprites/Tiles/Sprite-0001.png" id="1_55yar"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_y80f4"]
 
 [node name="EssenceDrop" type="Area2D" unique_id=162903755]
+script = ExtResource("1_1m3fq")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1240771325]
 shape = SubResource("CircleShape2D_y80f4")
 
 [node name="Visual" type="Sprite2D" parent="." unique_id=1720676355]
+texture_filter = 1
+texture = ExtResource("1_55yar")

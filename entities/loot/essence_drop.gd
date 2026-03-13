@@ -1,15 +1,16 @@
 class_name EssenceDrop
 extends Area2D
 
-
 var value : int = 1
 
 
 func _input_event(viewport, event, shape_idx):
 
-	if event.is_action_pressed("click"):
+	if event is InputEventMouseButton:
 
-		collect()
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+
+			collect()
 
 
 func collect():
